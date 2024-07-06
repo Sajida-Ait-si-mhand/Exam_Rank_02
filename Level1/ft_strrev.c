@@ -1,16 +1,26 @@
+#include <stdio.h>
+
 char    *ft_strrev(char *str)
 {
-    char *tmp;
     int i = 0;
-    while (str[i])
-        i++;
-    i = 0;
-    while (i > 0)
+    int len = 0;
+    char tmp;
+    while (str[len])
+        len++;
+    while (i < len - 1)
     {
         tmp = str[i];
-        str[i] = str[i + 1];
-        str[i + 1] = tmp;
+        str[i] = str[len - 1];
+        str[len - 1] = tmp;
         i++;
+        len--;
     }
     return(str);
+}
+int	main(void)
+{
+	char s[] = "Hello World";
+	ft_strrev(s);
+	printf("%s\n", s);
+	return (0);
 }
