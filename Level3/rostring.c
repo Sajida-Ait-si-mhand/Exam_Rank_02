@@ -19,9 +19,11 @@ int main(int ac, char *av[])
 		while (*str == ' ' || *str == '\t')
 			str++;
 		fist_word_start = str;
-		while (*str && (*str != ' ' || *str != '\t'))
+		while (*str && *str != ' ' && *str != '\t')
 			str++;
 		fist_word_end = str;
+		while (*str == ' ' || *str == '\t')
+			str++;
 		if (*str)
 		{
 			while (*str)
